@@ -75,12 +75,12 @@ class UsuarioController extends Controller
         $usuario->save();
         return response()->json(['message' => 'CV subido'], 200);
     }
-    public function eliminarCV($nombreArchivo)
+    public function eliminarCV()
     {
         $usuario = JWTAuth::user();
+        File::delete($usuario->cv);
         $usuario->cv = null;
         $usuario->save();
-        File::delete($nombreArchivo);
         return response()->json(['message' => 'CV eliminado'], 200);
     }
     public function datosPersonales()

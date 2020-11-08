@@ -11,7 +11,7 @@ class Experiencia extends Model
     // empresa, fecha inicio, fecha fin, actividades que realizó
     public $timestamps = false;
     protected $fillable = [
-        // 'puesto',
+        'puesto',
         'empresa',
         'fecha_inicio',
         'fecha_fin',
